@@ -1,0 +1,25 @@
+name: Build using Cake.Sdk
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+jobs:
+  build:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Get the sources
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install .NET Core SDK
+        uses: actions/setup-dotnet@v4
+
+      - name: Run Cake File
+        uses: cake-build/cake-action@master
+        with:
+          file-path: cake.cs
