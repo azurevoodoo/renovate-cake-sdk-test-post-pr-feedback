@@ -4,4 +4,3 @@
 Information("Hello world");
 
 InstallTool("dotnet:?package=Cake.Tool&version=5.1.0");
-InstallTool("nuget:?package=Cake&version=1.0.0");
