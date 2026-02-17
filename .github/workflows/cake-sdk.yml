@@ -8,6 +8,8 @@ jobs:
   build:
     name: Build and Test
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Get the sources
         uses: actions/checkout@v4
